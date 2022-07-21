@@ -1,6 +1,6 @@
 import React from 'react';
 
- 
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -10,8 +10,15 @@ class Search extends React.Component {
     };
   }
 
+  getYouTubeVideos(query) {
+    var options = {
+      key: this.props.API_KEY,
+      query: query
+    };
+  }
+
   handleInputChange(e) {
-    this.props.getYouTubeVideos(e.target.value);
+    this.getYouTubeVideos(e.target.value);
     this.setState({
       value: e.target.value
     });
